@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="parentContainer" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.fxmlController.ModeSelectController">
+  <children>
+    <GridPane fx:id="anchorRoot" prefHeight="600.0" prefWidth="650.0" style="-fx-background-color: #263238;">
+      <children>
+        <Label alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="CENTER" prefHeight="99.0" prefWidth="641.0" text="Neo Snake" textAlignment="CENTER" textFill="#edffee" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+          <effect>
+            <DropShadow color="#4dff00" height="87.23" radius="45.6325" spread="0.4" width="97.3" />
+          </effect>
+          <font>
+            <Font size="79.0" />
+          </font>
+        </Label>
+        <Button id="boutonCommencer" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#Solo" prefHeight="61.0" prefWidth="204.0" style="-fx-background-color: #090a0c,        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),        linear-gradient(#20262b, #191d22),        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-text-fill: white; -fx-effect: dropshadow( three-pass-box , rgba(100,255,0.6) , 5, 0.0 , 0 , 1 ); -fx-font-family: &quot;Arial&quot;; -fx-text-fill: linear-gradient(white, #d0d0d0); -fx-font-size: 20; -fx-padding: 10 20 10 20;" text="Solo" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#Duo" prefHeight="61.0" prefWidth="205.0" style="-fx-background-color: #090a0c,        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),        linear-gradient(#20262b, #191d22),        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-text-fill: white; -fx-effect: dropshadow( three-pass-box , rgba(100,255,0,0.6) , 5, 0.0 , 0 , 1 ); -fx-font-family: &quot;Arial&quot;; -fx-text-fill: linear-gradient(white, #d0d0d0); -fx-padding: 10 20 10 20; -fx-font-size: 20;" text="Duo" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#Retour" prefHeight="45.0" prefWidth="205.0" style="-fx-background-color: #090a0c,        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),        linear-gradient(#20262b, #191d22),        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-text-fill: white; -fx-effect: dropshadow( three-pass-box , rgba(255,0,0,0.6) , 5, 0.0 , 0 , 1 ); -fx-font-family: &quot;Arial&quot;; -fx-text-fill: linear-gradient(white, #d0d0d0); -fx-padding: 10 20 10 20; -fx-font-size: 20;" text="Retour" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+        <ChoiceBox fx:id="listeMods" minHeight="28.0" onAction="#choix" onContextMenuRequested="#choix" onInputMethodTextChanged="#choix" prefHeight="28.0" prefWidth="250.0" style="-fx-background-color: #090a0c,        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),        linear-gradient(#20262b, #191d22),        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-text-fill: white; -fx-effect: dropshadow( three-pass-box , rgba(100,255,0.6) , 5, 0.0 , 0 , 1 ); -fx-font-family: &quot;Arial&quot;; -fx-text-fill: linear-gradient(white, #d0d0d0); -fx-font-size: 20; -fx-padding: 10 20 10 20;" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Snake" />
+              <String fx:value="Reverse Snake" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#duoIA" prefHeight="58.0" prefWidth="205.0" style="-fx-background-color: #090a0c,        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),        linear-gradient(#20262b, #191d22),        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-text-fill: white; -fx-effect: dropshadow( three-pass-box , rgba(100,255,0,0.6) , 5, 0.0 , 0 , 1 ); -fx-font-family: &quot;Arial&quot;; -fx-text-fill: linear-gradient(white, #d0d0d0); -fx-padding: 10 20 10 20; -fx-font-size: 20;" text="Double IA" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="300.0" />
+               </GridPane.margin></Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="233.0" layoutY="346.0" mnemonicParsing="false" onAction="#IA" prefHeight="58.0" prefWidth="205.0" style="-fx-background-color: #090a0c,        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),        linear-gradient(#20262b, #191d22),        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-text-fill: white; -fx-effect: dropshadow( three-pass-box , rgba(100,255,0,0.6) , 5, 0.0 , 0 , 1 ); -fx-font-family: &quot;Arial&quot;; -fx-text-fill: linear-gradient(white, #d0d0d0); -fx-padding: 10 20 10 20; -fx-font-size: 20;" text="IA" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="300.0" />
+               </GridPane.margin>
+            </Button>
+            <ChoiceBox fx:id="listeVitesse" minHeight="28.0" onAction="#choixVit" onContextMenuRequested="#choix" onInputMethodTextChanged="#choix" prefHeight="28.0" prefWidth="250.0" style="-fx-background-color: #090a0c,        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),        linear-gradient(#20262b, #191d22),        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-text-fill: white; -fx-effect: dropshadow( three-pass-box , rgba(100,255,0.6) , 5, 0.0 , 0 , 1 ); -fx-font-family: &quot;Arial&quot;; -fx-text-fill: linear-gradient(white, #d0d0d0); -fx-font-size: 20; -fx-padding: 10 20 10 20;" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Easy" />
+                     <String fx:value="Medium" />
+                      <String fx:value="Hard" />
+                  </FXCollections>
+               </items>
+            </ChoiceBox>
+            <Label fx:id="labelmod" alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="CENTER" prefHeight="61.0" prefWidth="147.0" text="Snake" textAlignment="CENTER" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelvitesse" alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="CENTER" prefHeight="62.0" prefWidth="149.0" text="Medium" textAlignment="CENTER" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="179.0" valignment="CENTER" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="139.0" minHeight="0.0" prefHeight="100.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="170.0" minHeight="0.0" prefHeight="100.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="233.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="233.0" minHeight="0.0" prefHeight="100.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="233.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="233.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="202.0" minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+</StackPane>
